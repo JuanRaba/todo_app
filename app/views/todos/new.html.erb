@@ -1,0 +1,14 @@
+<h1>Nuevo ToDO</h1>
+<%= form_with model: @todo, local: true do |f| %>
+<ul>
+  <li>
+  <%= f.label :description %>
+  <%= f.text_area :completed %>
+  </li>
+  <li>
+  <%= f.label :completed %>
+  <%= f.check_box :completed  %>
+  </li>
+  <%= f.submit "Enviar" %>
+</ul>
+<% end %>

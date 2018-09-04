@@ -1,4 +1,7 @@
 <h1>ToDOs</h1>
+
+<%= link_to 'nuevo ToDO', todos_new_path %>
+
 <ol>
 <% @todos.each do |todo| %>
   <li>  
@@ -6,7 +9,6 @@
       <div class="well">
         <li> description <%= todo.description %> </li>
         <li> completed <%= todo.completed %> </li>
-        <!--li> <%= link_to 'link', todo %> </li-->
       </dir>
     </ul>
   </li>
