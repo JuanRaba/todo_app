@@ -8,9 +8,14 @@
     <ul>
       <div class="well">
         <li> description <%= todo.description %> </li>
-        <li> completed <%= todo.completed %> </li>
-        <li> <%= link_to 'Delete', todo, method: :delete %> </li>
-        <li> <%= link_to 'link', todo %> </li>
+        <% if todo.completed %>
+          <li> Completado </li>
+        <% else %>
+          <li> Incompleto <%= link_to 'Completar', complete_todo_path(todo), class: 'btn btn-success' %> </li>
+        <% end %>
+        <li> <%= link_to 'Editar', edit_todo_path(todo), class: 'btn btn-warning' %>
+        <%= link_to 'Borrar', todo, method: :delete, class: 'btn btn-danger' %>
+        <%= link_to 'Ver detalle', todo, class: 'btn btn-primary' %> </li>
       </dir>
     </ul>
   </li>
