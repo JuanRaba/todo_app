@@ -9,6 +9,8 @@
       <div class="well">
         <li> description <%= todo.description %> </li>
         <li> completed <%= todo.completed %> </li>
+        <li> <%= link_to 'Edit', edit_todo_path(todo) %> </li>
+        <li> <%= link_to 'link', todo %> </li>
       </dir>
     </ul>
   </li>
