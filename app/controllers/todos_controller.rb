@@ -3,6 +3,20 @@ class TodosController < ApplicationController
     @todos = Todo.all
   end
 
+  def list
+    @todos = Todo.all
+    @todos_completados = []
+    @todos_incompletos = []
+    @todos.each do |todo|
+      if todo.completed
+        @todos_completados<<todo
+      else
+        @todos_incompletos<<todo
+      end
+    end
+    #@todos.group(:completed)
+  end
+
   def new
     @todo = Todo.new
   end

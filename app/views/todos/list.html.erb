@@ -1,0 +1,46 @@
+<div class="list row">
+  <div class="col col-md-6">
+    <h2>No completados</h2>
+    <ol>
+    <% @todos_incompletos.each do |todo| %>
+      <li>  
+        <ul>
+          <div class="well">
+            <li> description <%= todo.description %> </li>
+            <% if todo.completed %>
+              <li> Completado </li>
+            <% else %>
+              <li> Incompleto <%= link_to 'Completar', complete_todo_path(todo), class: 'btn btn-success' %> </li>
+            <% end %>
+            <li> <%= link_to 'Editar', edit_todo_path(todo), class: 'btn btn-warning' %>
+            <%= link_to 'Borrar', todo, method: :delete, class: 'btn btn-danger' %>
+            <%= link_to 'Ver detalle', todo, class: 'btn btn-primary' %> </li>
+          </dir>
+        </ul>
+      </li>
+    <% end %>
+    </ol>
+  </div>
+  <div class="col col-md-6">
+    <h2>Completados</h2>
+    <ol>
+    <% @todos_completados.each do |todo| %>
+      <li>  
+        <ul>
+          <div class="well">
+            <li> description <%= todo.description %> </li>
+            <% if todo.completed %>
+              <li> Completado </li>
+            <% else %>
+              <li> Incompleto <%= link_to 'Completar', complete_todo_path(todo), class: 'btn btn-success' %> </li>
+            <% end %>
+            <li> <%= link_to 'Editar', edit_todo_path(todo), class: 'btn btn-warning' %>
+            <%= link_to 'Borrar', todo, method: :delete, class: 'btn btn-danger' %>
+            <%= link_to 'Ver detalle', todo, class: 'btn btn-primary' %> </li>
+          </dir>
+        </ul>
+      </li>
+    <% end %>
+    </ol>
+  </div>
+</div>
