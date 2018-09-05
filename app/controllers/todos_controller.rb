@@ -50,7 +50,7 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
     @todo.completed = true
     @todo.save
-    redirect_to todos_path
+    redirect_to(request.env['HTTP_REFERER'])
   end
 
   private

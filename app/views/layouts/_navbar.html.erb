@@ -5,9 +5,9 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="<%= asset_path todos_path %>">Index <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="<%= asset_path todos_list_path %>">List</a>
-      <a class="nav-item nav-link" href="<%= asset_path todos_new_path %>">New</a>
+      <a class="nav-item nav-link <%= 'active' if params[:action] == 'index'%>" href="<%= asset_path todos_path %>">Index <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link <%= 'active' if params[:action] == 'list'%>" href="<%= asset_path todos_list_path %>">List</a>
+      <a class="nav-item nav-link <%= 'active' if params[:action] == 'new'%>" href="<%= asset_path todos_new_path %>">New</a>
     </div>
   </div>
 </nav>
